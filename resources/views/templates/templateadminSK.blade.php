@@ -9,7 +9,7 @@
 
     <!-- --------------- css --------------- -->
     @foreach ($css as $style)
-    <link rel="stylesheet" href="assets/css/{{ $style }}.css">
+        <link rel="stylesheet" href="assets/css/{{ $style }}.css">
     @endforeach
 </head>
 
@@ -71,7 +71,7 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
     @foreach ($js as $script)
-    <script src="assets/js/{{ $script }}.js"></script>
+        <script src="assets/js/{{ $script }}.js"></script>
     @endforeach
 </body>
 
