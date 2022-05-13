@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class TbKategori extends Migration
+class TbPaket extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,12 @@ class TbKategori extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('tb_produk', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('airline');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ class TbKategori extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('tb_paket');
     }
 }
