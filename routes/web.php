@@ -18,4 +18,5 @@ Route::get('/', function () {
     return view('index');
 });
 
-// Route::get('/index', [Sahabatkarir::class, 'dashboard'])->name('index');
+Route::get('/payment', [Sahabatkarir::class, 'payment'])->name('payment');
+Route::get('/keranjang', [Sahabatkarir::class, 'keranjang'])->name('keranjang');
