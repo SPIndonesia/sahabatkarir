@@ -34,3 +34,6 @@ Route::get('/hapuspaket/{id_paket}', [Sahabatkarir::class, 'hapuspaket'])->name(
 Route::get('/editpaket/{id_paket}', [Sahabatkarir::class, 'editpaket'])->name('editpaket');
 Route::patch('/perbaruipaket', [Sahabatkarir::class, 'perbaruipaket'])->name('perbaruipaket');
 Route::post('/createpaket', [Sahabatkarir::class, 'createpaket'])->name('createpaket');
+
+// TODO: Admin - Beranda
+Route::get('/beranda', [Sahabatkarir::class, 'beranda'])->name('beranda');

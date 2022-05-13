@@ -13,43 +13,51 @@ class Sahabatkarir extends Controller
         $data_paket = Paket::all();
         return view('paket.paket', compact('data_paket'));
     }
+
     public function kategori()
     {
         $data_kategori = Kategori::all();
         return view('kategori.kategori', compact('data_kategori'));
     }
+
     public function tambahkategori()
     {
         return view('kategori.tambahkategori');
     }
+
     public function tambahpaket()
     {
         $data_kategori = Kategori::all();
         return view('paket.tambahpaket', compact('data_kategori'));
     }
+
     public function editkategori($id_kategori)
     {
         $data_kategori = Kategori::find($id_kategori);
         return view('kategori.editkategori', compact('data_kategori'));
     }
+
     public function editpaket($id_paket)
     {
         $data_kategori = Kategori::all();
         $data_paket = Paket::find($id_paket);
         return view('paket.editpaket', compact('data_paket', 'data_kategori'));
     }
+
     public function perbaruikategori(Request $request)
     {
         $data_kategori = Kategori::find($request->id_kategori);
         $data_kategori->update($request->all());
         return redirect()->route('kategori');
     }
+
     public function perbaruipaket(Request $request)
     {
         $data_paket = Paket::find($request->id_paket);
         $data_paket->update($request->all());
         return redirect()->route('paket');
     }
+
     public function createkategori(Request $request)
     {
         $data_kategori = new Kategori;
@@ -58,6 +66,7 @@ class Sahabatkarir extends Controller
         $data_kategori = Kategori::all();
         return view('kategori.kategori', compact('data_kategori'));
     }
+
     public function createpaket(Request $request)
     {
         $data_paket = new Paket;
@@ -69,24 +78,34 @@ class Sahabatkarir extends Controller
         $data_paket = Paket::all();
         return view('paket.paket', compact('data_paket'));
     }
+
     public function hapuskategori($id_kategori)
     {
         $data = Kategori::find($id_kategori);
         $data->delete();
         return redirect()->back();
     }
+
     public function hapuspaket($id_paket)
     {
         $data = Paket::find($id_paket);
         $data->delete();
         return redirect()->back();
     }
+
     public function payment()
     {
         return view('payment');
     }
+
     public function keranjang()
     {
         return view('keranjangBelanja');
+    }
+
+    // untuk menampilkan view beranda
+    public function beranda()
+    {
+        return view('beranda');
     }
 }
