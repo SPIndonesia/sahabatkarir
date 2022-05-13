@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sahabat Karir | Dashboard</title>
+    <title>{{ $judul }}</title>
 
     <!-- --------------- css --------------- -->
-    <link rel="stylesheet" href="assets/css/beranda.css">
+    @foreach ($css as $style)
+    <link rel="stylesheet" href="assets/css/{{ $style }}.css">
+    @endforeach
 </head>
 
 <body>
@@ -68,7 +70,9 @@
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-    <script src="assets/js/beranda.js"></script>
+    @foreach ($js as $script)
+    <script src="assets/js/{{ $script }}.js"></script>
+    @endforeach
 </body>
 
 </html>

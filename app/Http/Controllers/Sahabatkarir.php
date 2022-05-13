@@ -106,6 +106,18 @@ class Sahabatkarir extends Controller
     // untuk menampilkan view beranda
     public function beranda()
     {
-        return view('beranda');
+        $data = [
+            'judul' => 'Sahabat Karir | Dashboard',
+
+            'css' => [
+                'beranda'
+            ],
+
+            'js' => [
+                'beranda'
+            ]
+        ];
+
+        return view('beranda', $data);
     }
 }
