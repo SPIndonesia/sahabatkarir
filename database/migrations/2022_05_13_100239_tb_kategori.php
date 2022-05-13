@@ -15,8 +15,7 @@ class TbKategori extends Migration
     {
         Schema::create('tb_kategori', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('airline');
+            $table->string('nama');
             $table->timestamps();
         });
     }

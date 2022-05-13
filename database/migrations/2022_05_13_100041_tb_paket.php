@@ -15,8 +15,9 @@ class TbPaket extends Migration
     {
         Schema::create('tb_produk', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('airline');
+            $table->string('nama');
+            $table->integer('harga');
+            $table->longText('deskripsi')->nullable();
             $table->timestamps();
         });
     }
