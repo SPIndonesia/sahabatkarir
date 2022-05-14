@@ -37,3 +37,6 @@ Route::post('/createpaket', [Sahabatkarir::class, 'createpaket'])->name('createp
 
 // TODO: Admin - Beranda
 Route::get('/beranda', [Sahabatkarir::class, 'beranda'])->name('beranda');
+
+// TODO: Admin - Data Peserta
+Route::get('/dataPeserta', [Sahabatkarir::class, 'dataPeserta'])->name('dataPeserta');

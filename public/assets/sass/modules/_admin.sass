@@ -1,10 +1,19 @@
 @use '_reset'
 
-// TODO: Header
+// TODO: Variable
 $tinggi-header: 80px
 $warna-biru: #0779e4
-$lebar-nav: 300px
+$lebar-nav: 250px
 
+@mixin kontenAdmin()
+    width: calc( 100% - $lebar-nav )
+    padding: 20px
+    box-sizing: border-box
+    margin-left: 50px
+
+    height: calc( 100vh - $tinggi-header )
+
+// TODO: Header
 html
     font-size: 10px
 

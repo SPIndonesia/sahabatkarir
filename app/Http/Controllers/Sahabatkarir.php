@@ -120,4 +120,21 @@ class Sahabatkarir extends Controller
 
         return view('beranda', $data);
     }
+
+    public function dataPeserta()
+    {
+        $data = [
+            'judul' => 'Sahabat Karir | Data User',
+
+            'css' => [
+                'dataPeserta'
+            ],
+
+            'js' => [
+                'dataPeserta'
+            ]
+        ];
+
+        return view('dataPeserta', $data);
+    }
 }

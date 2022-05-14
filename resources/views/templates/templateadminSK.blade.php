@@ -9,7 +9,7 @@
 
     <!-- --------------- css --------------- -->
     @foreach ($css as $style)
-        <link rel="stylesheet" href="assets/css/{{ $style }}.css">
+    <link rel="stylesheet" href="assets/css/{{ $style }}.css">
     @endforeach
 </head>
 
@@ -39,22 +39,22 @@
     <section class="sec-beranda">
         <nav class="navigasi-beranda">
             <ul>
-                <li class="aktif">
+                <li class="nav" data-target="beranda">
                     <i class="fa-solid fa-house-user"></i>
                     <h2>Dashboard</h2>
                 </li>
 
-                <li>
+                <li class="nav" data-target="dataPeserta">
                     <i class="fa-solid fa-people-group"></i>
                     <h2>Data Peserta</h2>
                 </li>
 
-                <li>
+                <li class="nav" data-target="kategori">
                     <i class="fa-solid fa-layer-group"></i>
                     <h2>Kategori</h2>
                 </li>
 
-                <li>
+                <li class="nav" data-target="pembayaran">
                     <i class="fa-solid fa-money-check-dollar"></i>
                     <h2>Pembayaran</h2>
                 </li>
@@ -70,8 +70,10 @@
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
+    <script src="assets/js/template.js"></script>
+
     @foreach ($js as $script)
-        <script src="assets/js/{{ $script }}.js"></script>
+    <script src="assets/js/{{ $script }}.js"></script>
     @endforeach
 </body>
 
