@@ -13,11 +13,12 @@ class TbPaket extends Migration
      */
     public function up()
     {
-        Schema::create('tb_produk', function (Blueprint $table) {
-            $table->id();
+        Schema::create('tb_paket', function (Blueprint $table) {
+            $table->id('id_paket');
             $table->string('nama');
             $table->integer('harga');
             $table->longText('deskripsi')->nullable();
+            $table->foreignId('id_kategori')->nullable();
             $table->timestamps();
         });
     }

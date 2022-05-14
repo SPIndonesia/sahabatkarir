@@ -12,7 +12,7 @@
                 <div class="card-content">
                     <div class="card-body">
                         <div class="row">
-                            <form method="POST" action="{{ route('createpaket') }}" enctype="multipart/form-data" class="form form-vertical col-md-6 col-12 mt-4">
+                            <form method="POST" action="/paket" enctype="multipart/form-data" class="form form-vertical col-md-6 col-12 mt-4">
                                 @csrf
                                 <div class="form-body">
                                     <div class="col-12">

@@ -14,7 +14,7 @@ class TbKategori extends Migration
     public function up()
     {
         Schema::create('tb_kategori', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_kategori');
             $table->string('nama');
             $table->timestamps();
         });
