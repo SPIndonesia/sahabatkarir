@@ -40,3 +40,9 @@ Route::get('/beranda', [Sahabatkarir::class, 'beranda'])->name('beranda');
 
 // TODO: Admin - Data Peserta
 Route::get('/dataPeserta', [Sahabatkarir::class, 'dataPeserta'])->name('dataPeserta');
+
+// TODO: Admin - Kategori
+Route::get('/kategoriAdmin', [Sahabatkarir::class, 'kategoriAdmin'])->name('kategoriAdmin');
+
+// TODO: Admin - Kategori
+Route::get('/pembayaran', [Sahabatkarir::class, 'pembayaran'])->name('pembayaran');

@@ -49,7 +49,7 @@
                     <h2>Data Peserta</h2>
                 </li>
 
-                <li class="nav" data-target="kategori">
+                <li class="nav" data-target="kategoriAdmin">
                     <i class="fa-solid fa-layer-group"></i>
                     <h2>Kategori</h2>
                 </li>
