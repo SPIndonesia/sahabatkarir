@@ -22,6 +22,7 @@ Route::get('/', function () {
     return view('index');
 });
 
+
 Route::resource('paket', PaketController::class);
 Route::resource('kategori', KategoriController::class);
 // Route::get('/paket', [Sahabatkarir::class, 'paket'])->name('paket');
@@ -44,3 +45,4 @@ Route::resource('kategori', KategoriController::class);
 // Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
