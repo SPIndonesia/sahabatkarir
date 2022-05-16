@@ -12,7 +12,6 @@ class Kategori extends Model
     protected $fillable = [
         'nama'
     ];
-    public $timestamps = false;
     public function paket()
     {
         return $this->hasMany(Kategori::class, 'id_kategori', 'id_kategori');
