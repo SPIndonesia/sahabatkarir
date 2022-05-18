@@ -8,7 +8,7 @@
                 <h3>Kelola Paket</h3>
             </div>
             <div class="col-12 col-md-6 order-md-1 order-last" align="right">
-                <a href="{{ route('tambahpaket') }}" class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-plus"></i> Tambah Paket</a>
+                <a href="paket/create" class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-plus"></i> Tambah Paket</a>
             </div>
         </div>
     </div>
@@ -38,13 +38,21 @@
                                         <td>{{$item->nama}}</td>
                                         <td>{{$item->harga}}</td>
                                         <td>{{$item->deskripsi}}</td>
-                                        <td>{{$item->kategori->nama}}</td>
+                                        {{-- bikin perkondisian --}}
+                                        {{-- <td>{{$item->kategori->nama}}</td> --}}
                                         <td>
-                                            <a href="{{ route('editpaket',$item->id_paket) }}" class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                                            <a href="{{ route('hapuspaket',$item->id_paket) }}" class="btn btn-danger btn-action trigger--fire-modal-1" data-toggle="tooltip" title=""><i class="fas fa-trash"></i></a>
+                                            <a href="" class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a>
+
+                                            <form action="#" method="POST">
+                                                @method('delete')
+                                                @csrf
+                                                <button type="submit" class="btn btn-danger btn-action trigger--fire-modal-1" data-toggle="tooltip" title=""><i class="fas fa-trash"></i></button>
+                                                {{-- <a href="paket/{{  $item->id_paket}}" class="btn btn-danger btn-action trigger--fire-modal-1" data-toggle="tooltip" title=""><i class="fas fa-trash"></i></a> --}}
+                                            </form>
                                         </td>
                                     </tr>
                                     @endforeach
+
                                     </body>
                             </table>
                         </div>
