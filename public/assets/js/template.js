@@ -1,32 +1,28 @@
-/* ----------------------------------------------------------------------------------------------
- * Header
- * ----------------------------------------------------------------------------------------------
- */
-// TODO: Header
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 1) {
-        document.querySelector('header').classList.add('header-shadow')
-    } else {
-        document.querySelector('header').classList.remove('header-shadow')
-    }
+let baseUrl = window.origin
+baseUrl += '/'
 
-    // TODO: Navigasi Hamburger
-    if (document.querySelector('.navigasi-halaman-landing').classList.contains('lihat-navigasi')) document.querySelector('.navigasi-halaman-landing').classList.remove('lihat-navigasi')
+// TODO: Navigasi
+const liNav = [...document.querySelectorAll('.nav')]
+
+liNav.map(e => {
+    e.addEventListener('click', el => {
+        const dataTarget = e.getAttribute('data-target')
+        window.location = baseUrl + dataTarget
+
+        // ! Masukkan kelas aktif ke penyimpanan sementara
+        sessionStorage.setItem('aktif', dataTarget)
+    })
 })
 
-// TODO: Icon Cari
-document.querySelector('.icon-cari').addEventListener('click', () => {
-    document.querySelector('.header__cari').click()
-})
+// TODO: Active Class
+if (sessionStorage.getItem('aktif')) {
+    setInterval(() => {
+        const getStorageAktif = sessionStorage.getItem('aktif')
 
-// TODO: Navigasi Hamburger
-const hamburgerNavigasi = document.querySelector('.hamburger-navigasi')
-hamburgerNavigasi.addEventListener('click', () => {
-    document.querySelector('.navigasi-halaman-landing').classList.toggle('lihat-navigasi')
-})
+        const elementAktif = document.querySelector(`li[data-target="${getStorageAktif}"]`)
+        elementAktif.classList.add('aktif')
+    }, 1)
 
-document.addEventListener('click', e => {
-    if (!hamburgerNavigasi.contains(e.target)) {
-        document.querySelector('.navigasi-halaman-landing').classList.remove('lihat-navigasi')
-    }
-})
+} else {
+    document.querySelector('.navigasi-beranda ul li:first-child').classList.add('aktif')
+}
