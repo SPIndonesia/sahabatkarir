@@ -89,6 +89,8 @@ class PaketController extends Controller
      * @param  \App\Models\Paket  $paket
      * @return \Illuminate\Http\Response
      */
+
+
     public function destroy(Paket $paket)
     {
         $data = Paket::find($paket);

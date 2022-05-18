@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Sahabatkarir;
 use App\Http\Controllers\user\KategoriController;
 use App\Http\Controllers\user\PaketController;
+use Illuminate\Support\Facades\Auth;
 
 
 
@@ -24,6 +25,9 @@ Route::get('/', function () {
 
 Route::resource('paket', PaketController::class);
 Route::resource('kategori', KategoriController::class);
+
+
+
 // Route::get('/paket', [Sahabatkarir::class, 'paket'])->name('paket');
 // Route::get('/kategori', [Sahabatkarir::class, 'kategori'])->name('kategori');
 // Route::get('/payment', [Sahabatkarir::class, 'payment'])->name('payment');
@@ -41,6 +45,7 @@ Route::resource('kategori', KategoriController::class);
 // Route::patch('/perbaruipaket', [Sahabatkarir::class, 'perbaruipaket'])->name('perbaruipaket');
 // Route::post('/createpaket', [Sahabatkarir::class, 'createpaket'])->name('createpaket');
 
-// Auth::routes();
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
