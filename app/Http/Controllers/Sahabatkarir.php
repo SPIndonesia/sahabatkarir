@@ -120,4 +120,55 @@ class Sahabatkarir extends Controller
 
         return view('beranda', $data);
     }
+
+    public function dataPeserta()
+    {
+        $data = [
+            'judul' => 'Sahabat Karir | Data User',
+
+            'css' => [
+                'dataPeserta'
+            ],
+
+            'js' => [
+                'dataPeserta'
+            ]
+        ];
+
+        return view('dataPeserta', $data);
+    }
+
+    public function kategoriAdmin()
+    {
+        $data = [
+            'judul' => 'Sahabat Karir | Kategori',
+
+            'css' => [
+                'kategori'
+            ],
+
+            'js' => [
+                'kategori'
+            ]
+        ];
+
+        return view('kategori', $data);
+    }
+
+    public function pembayaran()
+    {
+        $data = [
+            'judul' => 'Sahabat Karir | Data User',
+
+            'css' => [
+                'pembayaran'
+            ],
+
+            'js' => [
+                'pembayaran'
+            ]
+        ];
+
+        return view('pembayaran', $data);
+    }
 }

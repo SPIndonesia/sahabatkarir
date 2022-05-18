@@ -2,12 +2,7 @@
 @use 'components/kartu'
 
 .konten-beranda
-    width: calc( 100% - admin.$lebar-nav )
-    padding: 20px
-    box-sizing: border-box
-    margin-left: 50px
-
-    height: calc( 100vh - admin.$tinggi-header )
+    @include admin.kontenAdmin()
 
 // TODO: Sec Two
 .sec-one
