@@ -20,3 +20,26 @@ harga.map(e => {
     const number_string = e.innerText
     e.innerText = `Rp. ${Rp(number_string)}`
 })
+
+// TODO: Popup
+const tombolTambahData = document.querySelector('.tombol-tambah')
+
+const popup = document.querySelector('.popup')
+const tombolClosePopup = document.querySelector('.popup .tombol-close')
+
+tombolTambahData.addEventListener('click', e => {
+    e.preventDefault()
+    popup.style.display = 'initial'
+
+    setTimeout(() => {
+        popup.classList.toggle('opacity-1')
+    }, 1)
+})
+
+tombolClosePopup.addEventListener('click', () => {
+    popup.classList.toggle('opacity-1')
+
+    setTimeout(() => {
+        popup.style.display = 'none'
+    }, 500)
+})

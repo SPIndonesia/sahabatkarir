@@ -20,7 +20,7 @@
         <div class="judul">
             <h1>Tabel Kategori</h1>
 
-            <a href="">Tambah Data</a>
+            <a href="" class="tombol-tambah">Tambah Data</a>
         </div>
 
         <div class="tabel">
@@ -75,6 +75,43 @@
                 <a href="" class="next">
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup">
+        <div class="kategori-popup">
+            <div class="tombol-close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <div class="konten">
+                <div class="judul">
+                    Tambah Data
+                </div>
+
+                <form action="">
+                    <ul class="form">
+                        <li>
+                            <label for="">Nama Kategori : </label>
+                            <input type="text" placeholder="Masukkan Nama Kategori">
+                        </li>
+
+                        <li>
+                            <label for="">Deskripsi : </label>
+                            <input type="text" placeholder="Masukkan Deskripsi Kategori">
+                        </li>
+
+                        <li>
+                            <label for="">Lain - lain</label>
+                            <input type="text" placeholder="Lainnya...">
+                        </li>
+
+                        <li class="tombol-simpan">
+                            <button type="submit">Simpan</button>
+                        </li>
+                    </ul>
+                </form>
             </div>
         </div>
     </div>
