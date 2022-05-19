@@ -30,7 +30,7 @@
                         <th>No</th>
                         <th>Nama Kategori</th>
                         <th>Deskripsi</th>
-                        <th>Harga</th>
+                        <th>Paket</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -49,8 +49,7 @@
                         </td>
 
                         <td>
-                            <span>Mulai Dari</span>
-                            <span class="harga">499000</span>
+                            Paket Apa
                         </td>
 
                         <td class="aksi">
@@ -87,7 +86,7 @@
 
             <div class="konten">
                 <div class="judul">
-                    Tambah Data
+                    <h1>Tambah Data</h1>
                 </div>
 
                 <form action="">

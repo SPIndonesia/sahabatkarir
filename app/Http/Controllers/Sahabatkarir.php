@@ -148,6 +148,7 @@ class Sahabatkarir extends Controller
             ],
 
             'js' => [
+                'sweetalert2.all.min',
                 'kategori'
             ]
         ];
