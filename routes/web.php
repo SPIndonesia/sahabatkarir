@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Sahabatkarir;
+use App\Http\Controllers\user\KategoriController;
+use App\Http\Controllers\user\PaketController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +21,7 @@ use App\Http\Controllers\Sahabatkarir;
 Route::get('/', function () {
     return view('index');
 });
+
 
 Route::get('/paket', [Sahabatkarir::class, 'paket'])->name('paket');
 Route::get('/kategori', [Sahabatkarir::class, 'kategori'])->name('kategori');
@@ -46,3 +51,4 @@ Route::get('/kategoriAdmin', [Sahabatkarir::class, 'kategoriAdmin'])->name('kate
 
 // TODO: Admin - Kategori
 Route::get('/pembayaran', [Sahabatkarir::class, 'pembayaran'])->name('pembayaran');
+

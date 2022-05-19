@@ -13,7 +13,7 @@ class Paket extends Model
     protected $fillable = [
         'nama', 'harga', 'deskripsi', 'id_kategori'
     ];
-    public $timestamps = false;
+    // public $timestamps = false;
 
     public function kategori()
     {
