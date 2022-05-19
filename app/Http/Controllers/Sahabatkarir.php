@@ -172,4 +172,22 @@ class Sahabatkarir extends Controller
 
         return view('pembayaran', $data);
     }
+
+    public function login()
+    {
+        $data = [
+            'judul' => 'Sahabat Karir | Login'
+        ];
+
+        return view('login', $data);
+    }
+
+    public function register()
+    {
+        $data = [
+            'judul' => 'Sahabat Karir | Login'
+        ];
+
+        return view('register', $data);
+    }
 }

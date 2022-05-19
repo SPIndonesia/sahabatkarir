@@ -52,3 +52,8 @@ Route::get('/kategoriAdmin', [Sahabatkarir::class, 'kategoriAdmin'])->name('kate
 // TODO: Admin - Kategori
 Route::get('/pembayaran', [Sahabatkarir::class, 'pembayaran'])->name('pembayaran');
 
+// TODO: Login
+Route::get('/login', [Sahabatkarir::class, 'login'])->name('login');
+
+// TODO: Register
+Route::get('/register', [Sahabatkarir::class, 'register'])->name('register');
