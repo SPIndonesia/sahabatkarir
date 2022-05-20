@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ $judul }}</title>
+    <title></title>
 
     {{-------------- css --------------}}
     <link rel="stylesheet" href="assets/css/loginRegister.css">
@@ -21,19 +21,29 @@
                 <p>Selamat Datang di Sahabat Karir</p>
             </div>
 
-            <form action="">
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
                 <ul>
                     <li>
                         <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="Masukkan Email" autocomplete="off">
+                        <input type="email" id="email" name="email" placeholder="Masukkan Email" autocomplete="off">
+                        @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </li>
 
                     <li>
                         <label for="password">Password</label>
 
                         <div class="__mata">
-                            <input type="password" id="password" placeholder="Masukkan Password" autocomplete="off">
-
+                            <input type="password" id="password" name="password" placeholder="Masukkan Password" autocomplete="off">
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                             <div class="mata">
                                 <i class="fa-solid fa-eye"></i>
                             </div>
@@ -42,12 +52,12 @@
 
                     <li class="remember-password">
                         <div>
-                            <input type="checkbox" id="checkbox">
+                            <input type="checkbox" name="remember" id="remember">
                             <label for="checkbox">Remember Password</label>
                         </div>
 
                         <div>
-                            <a href="#">Forgot Password</a>
+                            <a href="{{ route('password.request') }}">Forgot Password</a>
                         </div>
                     </li>
 
@@ -57,7 +67,7 @@
 
                     <li class="daftar-sekarang">
                         <span>Belum punya akun?</span>
-                        <a href="">Daftar Sekarang</a>
+                        <a href="{{ route('register') }}">Daftar Sekarang</a>
                     </li>
 
                 </ul>
