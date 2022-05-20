@@ -60,6 +60,11 @@
                     <li class="tombol">
                         <button type="submit">Sign Up</button>
                     </li>
+
+                    <li class="daftar-sekarang">
+                        <span>Sudah punya akun?</span>
+                        <a href="">Login Sekarang</a>
+                    </li>
                 </ul>
             </form>
         </div>
