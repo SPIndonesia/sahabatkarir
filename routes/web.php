@@ -29,6 +29,9 @@ Route::get('/beranda', function () {
 });
 Auth::routes();
 
+Route::put('kategori/ubah/{id}', [KategoriController::class, 'ubah'])->name('kategori.ubah');
+Route::delete('kategori/hapus/{id}', [KategoriController::class, 'hapus'])->name('kategori.hapus');
+
 Route::resource('kategori', KategoriController::class);
 
 // Route::resource('paket', PaketController::class);

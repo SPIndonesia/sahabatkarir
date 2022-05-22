@@ -52,11 +52,14 @@
                             </div>
 
                             <div class="hapus">
-                                <form action="{{ route('kategori.hapus',$d->id) }}" method="post">
+                                <form action="{{ route('kategori.hapus',$d->id_kategori) }}" method="post">
                                     @method('DELETE')
                                     @csrf
+                                    <button type="submit">
+                                        <i class="hapus fa-solid fa-trash"></i>
+                                    </button>
 
-                                    <i class="hapus fa-solid fa-trash"></i>
+
                                 </form>
                             </div>
                         </td>
