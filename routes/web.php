@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Sahabatkarir;
-use App\Http\Controllers\user\KategoriController;
 use App\Http\Controllers\user\PaketController;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,15 +19,20 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+
+
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/beranda', function () {
+    return view('index');
+});
+Auth::routes();
 
-
-Route::resource('paket', PaketController::class);
 Route::resource('kategori', KategoriController::class);
 
-
+// Route::resource('paket', PaketController::class);
+// Route::resource('admin', KategoriController::class);
 
 // Route::get('/paket', [Sahabatkarir::class, 'paket'])->name('paket');
 // Route::get('/kategori', [Sahabatkarir::class, 'kategori'])->name('kategori');
@@ -46,7 +51,8 @@ Route::resource('kategori', KategoriController::class);
 // Route::patch('/perbaruipaket', [Sahabatkarir::class, 'perbaruipaket'])->name('perbaruipaket');
 // Route::post('/createpaket', [Sahabatkarir::class, 'createpaket'])->name('createpaket');
 
-Auth::routes();
+
+// Route::resource('admin', Kategor 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -68,6 +74,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Route::patch('/perbaruipaket', [Sahabatkarir::class, 'perbaruipaket'])->name('perbaruipaket');
 // Route::post('/createpaket', [Sahabatkarir::class, 'createpaket'])->name('createpaket');
 
+
+
+
 // // TODO: Admin - Beranda
 // Route::get('/beranda', [Sahabatkarir::class, 'beranda'])->name('beranda');
 
@@ -75,7 +84,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Route::get('/dataPeserta', [Sahabatkarir::class, 'dataPeserta'])->name('dataPeserta');
 
 // // TODO: Admin - Kategori
-// Route::get('/kategoriAdmin', [Sahabatkarir::class, 'kategoriAdmin'])->name('kategoriAdmin');
+// Route::get('/Admin/kategori', [Sahabatkarir::class, 'kategoriAdmin'])->name('kategoriAdmin');
 
 // // TODO: Admin - Kategori
 // Route::get('/pembayaran', [Sahabatkarir::class, 'pembayaran'])->name('pembayaran');
