@@ -29,16 +29,16 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($data_kategori as $key => $item)
+                                    {{-- @foreach ($data_kategori as $key => $item)
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
-                                        <td>{{$item->nama}}</td>
-                                        <td>
-                                            <a href="{{ route('editkategori',$item->id_kategori) }}" class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                                            <a href="{{ route('hapuskategori',$item->id_kategori) }}" class="btn btn-danger btn-action trigger--fire-modal-1" data-toggle="tooltip" title=""><i class="fas fa-trash"></i></a>
-                                        </td>
+                                    <td>{{$item->nama}}</td>
+                                    <td>
+                                        <a href="{{ route('editkategori',$item->id_kategori) }}" class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a>
+                                        <a href="{{ route('hapuskategori',$item->id_kategori) }}" class="btn btn-danger btn-action trigger--fire-modal-1" data-toggle="tooltip" title=""><i class="fas fa-trash"></i></a>
+                                    </td>
                                     </tr>
-                                    @endforeach
+                                    @endforeach --}}
                                     </body>
                             </table>
                         </div>

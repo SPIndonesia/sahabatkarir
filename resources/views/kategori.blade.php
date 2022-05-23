@@ -29,28 +29,22 @@
                     <tr>
                         <th>No</th>
                         <th>Nama Kategori</th>
-                        <th>Deskripsi</th>
-                        <th>Paket</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <?php for($i = 0; $i < 7; $i++) : ?>
+                    @foreach ($data_kategori as $d)
+                    @php
+                    $i=1
+                    @endphp
                     <tr>
                         <td>
-                            <?= $i + 1 ?>
+                            <?= $i  ?>
                         </td>
 
-                        <td>Kelas SBMPTN</td>
+                        <td>{{ $d->nama }}</td>
 
-                        <td>
-                            <p>Ayo Percayakan Masa Depanmu Bersama Sahabat SBMPTN</p>
-                        </td>
-
-                        <td>
-                            Paket Apa
-                        </td>
 
                         <td class="aksi">
                             <div class="ubah">
@@ -58,11 +52,23 @@
                             </div>
 
                             <div class="hapus">
-                                <i class="hapus fa-solid fa-trash"></i>
+                                <form action="{{ route('kategori.hapus',$d->id_kategori) }}" method="post">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button type="submit">
+                                        <i class="hapus fa-solid fa-trash"></i>
+                                    </button>
+
+
+                                </form>
                             </div>
                         </td>
                     </tr>
-                    <?php endfor ?>
+                    @php
+                    $i++
+                    @endphp
+                    @endforeach
+
                 </tbody>
             </table>
 
@@ -89,11 +95,12 @@
                     <h1>Tambah Data</h1>
                 </div>
 
-                <form action="">
+                <form action="{{ route('kategori.store') }}" method="POST">
+                    @csrf
                     <ul class="form">
                         <li>
                             <label for="">Nama Kategori : </label>
-                            <input type="text" placeholder="Masukkan Nama Kategori">
+                            <input type="text" placeholder="Masukkan Nama Kategori" name="nama">
                         </li>
 
                         <li>

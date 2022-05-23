@@ -20,6 +20,28 @@ class PaketController extends Controller
         return view('paket.paket', compact('data_paket'));
     }
 
+
+    public function ganti(Request $request)
+    {
+        $data = Paket::updated(
+            [
+                'nama' => $request->nama,
+                'harga' => $request->harga,
+                'deskripsi' => $request->deskripsi,
+                'id_kategori' => $request->id_kategori,
+            ]
+        );
+
+        return redirect('');
+    }
+
+
+    public function hapus($id)
+    {
+        $data = Paket::find($id)->delete();
+
+        return redirect('/paket');
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -93,8 +115,5 @@ class PaketController extends Controller
 
     public function destroy(Paket $paket)
     {
-        $data = Paket::find($paket);
-        $data->delete();
-        return redirect()->back();
     }
 }
