@@ -19,6 +19,12 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+Route::group(
+    [['middleware' => ['role:user']], 'namespace' => 'Admin', 'prefix' => 'admin'],
+    function () {
+        Route::get('/kategori', [KategoriController::class, 'index']);
+    }
+);
 
 
 Route::get('/', function () {
