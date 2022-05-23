@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\user;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Models\Kategori;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class KategoriController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,14 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        //
+        $data_user = User::all();
+        $data = [
+            'judul' => 'Sahabat Karir | Kategori',
+            'css' => ['kategori'],
+            'js' => ['kategori'],
+            'data_user' => $data_user,
+        ];
+        return view('dataPeserta', $data);
     }
 
     /**
@@ -42,10 +48,10 @@ class KategoriController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Kategori  $kategori
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Kategori $kategori)
+    public function show(User $user)
     {
         //
     }
@@ -53,10 +59,10 @@ class KategoriController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Kategori  $kategori
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kategori $kategori)
+    public function edit(User $user)
     {
         //
     }
@@ -65,10 +71,10 @@ class KategoriController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Kategori  $kategori
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kategori $kategori)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -76,10 +82,10 @@ class KategoriController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Kategori  $kategori
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kategori $kategori)
+    public function destroy(User $user)
     {
         //
     }

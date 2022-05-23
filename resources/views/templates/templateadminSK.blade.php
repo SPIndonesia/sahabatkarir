@@ -6,19 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        {{-- {{ $judul }} --}}
+        {{ $judul }}
     </title>
 
     <!-- --------------- css --------------- -->
     @foreach ($css as $style)
-    <link rel="stylesheet" href="assets/css/{{ $style }}.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/'.$style.'.css') }}">
     @endforeach
 </head>
 
 <body>
     <header>
         <div class="sahabat-karir-logo">
-            <img src="assets/img/icon/logo-sk.png" alt="sahabat karir">
+            <img src="{{ asset('assets/img/icon/logo-sk.png') }}" alt="sahabat karir">
             <h1>Sahabat Karir</h1>
         </div>
 
@@ -72,10 +72,10 @@
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-    <script src="assets/js/template.js"></script>
+    <script src="{{ asset('assets/js/template.js') }}"></script>
 
     @foreach ($js as $script)
-    <script src="assets/js/{{ $script }}.js"></script>
+    <script src="{{ asset('assets/js/'. $script.'.js') }}"></script>
     @endforeach
 </body>
 

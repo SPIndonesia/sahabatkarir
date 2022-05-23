@@ -14,7 +14,7 @@ class PaketController extends Controller
      */
     public function index()
     {
-        //
+        $data = Paket::all();
     }
 
     /**
@@ -35,7 +35,13 @@ class PaketController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = Paket::created([
+            'nama' => $request->nama,
+            'harga' => $request->harga,
+            'deskripsi' => $request->deskripsi,
+        ]);
+
+        return redirect('');
     }
 
     /**
@@ -67,9 +73,14 @@ class PaketController extends Controller
      * @param  \App\Models\Paket  $paket
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Paket $paket)
+    public function update(Request $request, Paket $paket, $id)
     {
-        //
+        $data = Paket::find($id)->update([
+            'nama' => $request->nama,
+            'harga' => $request->harga,
+            'deskripsi' => $request->deskripsi,
+            'id_kategori' => $request->id_kategori,
+        ]);
     }
 
     /**

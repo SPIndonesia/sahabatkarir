@@ -1,8 +1,15 @@
 // TODO: Popup
 const tombolTambahData = document.querySelector('.tombol-tambah')
-
+const base_url = window.origin
+const method = [...document.querySelectorAll('input[name="_method"]')]
 const popup = document.querySelector('.popup')
 const tombolClosePopup = document.querySelector('.popup .tombol-close')
+
+function Put(val = '') {
+    method.map(e => {
+        e.setAttribute('value', val)
+    })
+}
 
 function showPopup(data = null) {
     popup.style.display = 'initial'
@@ -33,12 +40,16 @@ tombolTambahData.addEventListener('click', e => {
     showPopup({
         judul: 'Tambah Data',
         teksTombol: 'Simpan',
-        action: ''
+        action: `${base_url}/kategori`
     })
+
+    Put()
 })
 
 tombolClosePopup.addEventListener('click', () => {
     hiddenPopup()
+
+    Put('PUT')
 })
 
 // TODO: Action
@@ -48,10 +59,11 @@ const tombolUbah = [...document.querySelectorAll('.ubah')]
 
 tombolUbah.map(e => {
     e.addEventListener('click', () => {
+        const id = e.getAttribute('data-id')
         showPopup({
             judul: 'Ubah Data Kategori',
             teksTombol: 'Simpan Perubahan',
-            action: ''
+            action: `${base_url}/kategori/ubah/${id}`
         })
     })
 })

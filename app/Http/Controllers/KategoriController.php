@@ -12,6 +12,7 @@ class KategoriController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $data_kategori = Kategori::all();
@@ -21,6 +22,8 @@ class KategoriController extends Controller
             'js' => ['kategori'],
             'data_kategori' => $data_kategori,
         ];
+
+
         return view('kategori', $data);
     }
 
@@ -42,6 +45,8 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
+        // dd('tambah ' . $request->nama);
+
         $data = Kategori::create(
             ['nama' => $request->nama]
         );
@@ -76,16 +81,18 @@ class KategoriController extends Controller
      * @param  \App\Models\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kategori $kategori)
-    {
-        $data = Kategori::updated([
-            'nama' => $request->nama
-        ]);
-    }
+    // public function update(Request $request, Kategori $kategori)
+    // {
+    //     dd('ubah' . $request->nama);
+
+    //     $data = Kategori::updated([
+    //         'nama' => $request->nama
+    //     ]);
+    // }
 
     public function ubah(Request $request, $id)
     {
-        $data = Kategori::updated([
+        $data = Kategori::find($id)->update([
             'nama' => $request->nama
         ]);
 

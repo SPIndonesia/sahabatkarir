@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Sahabatkarir;
 use App\Http\Controllers\user\PaketController;
@@ -20,25 +21,56 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::group(
-    [['middleware' => ['role:user']], 'namespace' => 'Admin', 'prefix' => 'admin'],
+    [
+        [
+            'middleware' => ['role:user']
+        ],
+        'namespace' => 'Admin',
+        'prefix' => 'admin',
+    ],
     function () {
-        Route::get('/kategori', [KategoriController::class, 'index']);
+
+
+        // route kategori
+        // Route::get('/kategori', [KategoriController::class, 'index']);
+        // Route::put('kategori/ubah/{id}', [KategoriController::class, 'ubah'])->name('kategori.ubah');
+        // Route::delete('kategori/hapus/{id}', [KategoriController::class, 'hapus'])->name('kategori.hapus');
     }
 );
 
-
-Route::get('/', function () {
-    return view('index');
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('coba/admin', function () {
+        return 'home';
+    });
+    Route::get('/admin/user', [UserController::class, 'index']);
 });
+
+Route::middleware(['auth', 'user'])->group(function () {
+    Route::get('coba/admin2', function () {
+        return 'admin';
+    });
+});
+
+// Route::get('/user', function () {
+//     return view('index');
+// })->middleware('user');
+
+// Route::get('/kategori', [KategoriController::class, 'index']);
+// Route::put('kategori/ubah/{id}', [KategoriController::class, 'ubah'])->name('kategori.ubah');
+// Route::delete('kategori/hapus/{id}', [KategoriController::class, 'hapus'])->name('kategori.hapus');
+
+// Route::get('/', function () {
+//     return view('index');
+// });
 Route::get('/beranda', function () {
     return view('index');
 });
 Auth::routes();
 
-Route::put('kategori/ubah/{id}', [KategoriController::class, 'ubah'])->name('kategori.ubah');
-Route::delete('kategori/hapus/{id}', [KategoriController::class, 'hapus'])->name('kategori.hapus');
 
-Route::resource('kategori', KategoriController::class);
+
+
+// Route::resource('kategori', KategoriController::class);
 
 // Route::resource('paket', PaketController::class);
 // Route::resource('admin', KategoriController::class);
