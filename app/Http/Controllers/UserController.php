@@ -17,8 +17,8 @@ class UserController extends Controller
         $data_user = User::all();
         $data = [
             'judul' => 'Sahabat Karir | Kategori',
-            'css' => ['kategori'],
-            'js' => ['kategori'],
+            'css' => ['dataPeserta'],
+            'js' => ['dataPeserta'],
             'data_user' => $data_user,
         ];
         return view('dataPeserta', $data);
@@ -85,8 +85,10 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        //
+        $data = User::find($id)->delete();
+
+        return redirect('/admin/user');
     }
 }

@@ -43,6 +43,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
         return 'home';
     });
     Route::get('/admin/user', [UserController::class, 'index']);
+    Route::delete('/admin/user/delete/$id', [UserController::class, 'destroy'])->name('user.delete');
 });
 
 Route::middleware(['auth', 'user'])->group(function () {

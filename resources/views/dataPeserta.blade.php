@@ -32,7 +32,7 @@
                 <thead>
                     <tr>
                         <th>Nama</th>
-                        <th>Kategori</th>
+                        <th>Email</th>
                         <th>Paket</th>
                         <th>Tanggal</th>
                         <th>Status</th>
@@ -45,13 +45,17 @@
 
 
                     <tr>
-                        <td>{{ $d->nama }}</td>
-                        <td>Kelas SBMPTN</td>
+                        <td>{{ $d->name}}</td>
+                        <td>{{ $d->email }}</td>
                         <td>Paket</td>
                         <td>Tanggal</td>
                         <td>Aktif</td>
                         <td>
-                            <i class="fa-solid fa-trash"></i>
+                            <form action="{{ route('user.delete', $d->id) }}" method="POST">
+                                @method("DELETE")
+                                @csrf
+                                <button type="submit"> <i class="fa-solid fa-trash"></i></button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach
