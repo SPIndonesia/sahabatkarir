@@ -32,27 +32,33 @@
                 <thead>
                     <tr>
                         <th>Nama</th>
-                        <th>Kategori</th>
-                        <th>Paket</th>
-                        <th>Tanggal</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Tanggal Dibuat</th>
                         <th>Status</th>
                         <th></th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <?php for ($i=0; $i < 10; $i++) : ?>
+                    @foreach ($data_user as $d)
+
+
                     <tr>
-                        <td>Febridila Nurul</td>
-                        <td>Kelas SBMPTN</td>
-                        <td>Paket</td>
-                        <td>Tanggal</td>
+                        <td>{{ $d->name}}</td>
+                        <td>{{ $d->email }}</td>
+                        <td>{{ $d->role }}</td>
+                        <td>{{ $d->created_at }}</td>
                         <td>Aktif</td>
                         <td>
-                            <i class="fa-solid fa-trash"></i>
+                            <form action="{{ route('user.delete', $d->id) }}" method="POST">
+                                @method("DELETE")
+                                @csrf
+                                <button type="submit"> <i class="fa-solid fa-trash"></i></button>
+                            </form>
                         </td>
                     </tr>
-                    <?php endfor ?>
+                    @endforeach
                 </tbody>
             </table>
         </div>

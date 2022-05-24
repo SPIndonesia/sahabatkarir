@@ -12,6 +12,7 @@ class KategoriController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $data_kategori = Kategori::all();
@@ -21,6 +22,8 @@ class KategoriController extends Controller
             'js' => ['kategori'],
             'data_kategori' => $data_kategori,
         ];
+
+
         return view('kategori', $data);
     }
 
@@ -42,10 +45,11 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
+
         $data = Kategori::create(
             ['nama' => $request->nama]
         );
-        return redirect('kategori');
+        return redirect('admin/kategori');
     }
 
     /**
@@ -76,20 +80,14 @@ class KategoriController extends Controller
      * @param  \App\Models\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kategori $kategori)
-    {
-        $data = Kategori::updated([
-            'nama' => $request->nama
-        ]);
-    }
 
     public function ubah(Request $request, $id)
     {
-        $data = Kategori::updated([
+        $data = Kategori::find($id)->update([
             'nama' => $request->nama
         ]);
 
-        return redirect('/kategori');
+        return redirect('admin/kategori');
     }
 
     /**
@@ -106,13 +104,13 @@ class KategoriController extends Controller
     public function destroy(Kategori $kategori, $id)
     {
         $data = Kategori::find($kategori->id)->delete();
-        return redirect('/kategori');
+        return redirect('admin/kategori');
     }
 
 
     public function hapus($id)
     {
         $data = Kategori::find($id)->delete();
-        return redirect('/kategori');
+        return redirect('admin/kategori');
     }
 }

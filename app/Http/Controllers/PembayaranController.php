@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Paket;
+use App\Models\Pembayaran;
 use Illuminate\Http\Request;
 
-class PaketController extends Controller
+class PembayaranController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,15 @@ class PaketController extends Controller
      */
     public function index()
     {
-        $data = Paket::all();
+        $data_pembayaran = Pembayaran::all();
+        $data = [
+            'judul' => 'judul',
+            'css' => 'pembayaran',
+            'js' => 'pembayaran',
+            'data_pembayaran' => $data_pembayaran,
+        ];
+
+        return view('pembayaran', $data);
     }
 
     /**
@@ -35,22 +43,16 @@ class PaketController extends Controller
      */
     public function store(Request $request)
     {
-        $data = Paket::created([
-            'nama' => $request->nama,
-            'harga' => $request->harga,
-            'deskripsi' => $request->deskripsi,
-        ]);
-
-        return redirect('');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Paket  $paket
+     * @param  \App\Models\Pembayaran  $pembayaran
      * @return \Illuminate\Http\Response
      */
-    public function show(Paket $paket)
+    public function show(Pembayaran $pembayaran)
     {
         //
     }
@@ -58,10 +60,10 @@ class PaketController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Paket  $paket
+     * @param  \App\Models\Pembayaran  $pembayaran
      * @return \Illuminate\Http\Response
      */
-    public function edit(Paket $paket)
+    public function edit(Pembayaran $pembayaran)
     {
         //
     }
@@ -70,26 +72,21 @@ class PaketController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Paket  $paket
+     * @param  \App\Models\Pembayaran  $pembayaran
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Paket $paket, $id)
+    public function update(Request $request, Pembayaran $pembayaran)
     {
-        $data = Paket::find($id)->update([
-            'nama' => $request->nama,
-            'harga' => $request->harga,
-            'deskripsi' => $request->deskripsi,
-            'id_kategori' => $request->id_kategori,
-        ]);
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Paket  $paket
+     * @param  \App\Models\Pembayaran  $pembayaran
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Paket $paket)
+    public function destroy(Pembayaran $pembayaran)
     {
         //
     }

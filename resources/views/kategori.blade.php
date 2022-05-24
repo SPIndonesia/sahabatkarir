@@ -47,7 +47,7 @@
 
 
                         <td class="aksi">
-                            <div class="ubah">
+                            <div class="ubah" data-id="{{ $d->id_kategori}}">
                                 <i class="fa-solid fa-pen"></i>
                             </div>
 
@@ -95,7 +95,8 @@
                     <h1>Tambah Data</h1>
                 </div>
 
-                <form action="{{ route('kategori.store') }}" method="POST">
+                <form class="kategori_form" action="" method="POST">
+                    @method('PUT')
                     @csrf
                     <ul class="form">
                         <li>
