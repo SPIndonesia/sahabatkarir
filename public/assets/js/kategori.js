@@ -40,7 +40,7 @@ tombolTambahData.addEventListener('click', e => {
     showPopup({
         judul: 'Tambah Data',
         teksTombol: 'Simpan',
-        action: `${base_url}/kategori`
+        action: `${base_url}/admin/kategori/store`
     })
 
     Put()
@@ -63,7 +63,7 @@ tombolUbah.map(e => {
         showPopup({
             judul: 'Ubah Data Kategori',
             teksTombol: 'Simpan Perubahan',
-            action: `${base_url}/kategori/ubah/${id}`
+            action: `${base_url}/admin/kategori/ubah/${id}`
         })
     })
 })

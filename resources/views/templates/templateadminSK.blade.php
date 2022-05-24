@@ -46,12 +46,12 @@
                     <h2>Dashboard</h2>
                 </li>
 
-                <li class="nav" data-target="dataPeserta">
+                <li class="nav" data-target="admin/user">
                     <i class="fa-solid fa-people-group"></i>
                     <h2>Data Peserta</h2>
                 </li>
 
-                <li class="nav" data-target="kategori">
+                <li class="nav" data-target="admin/kategori">
                     <i class="fa-solid fa-layer-group"></i>
                     <h2>Kategori</h2>
                 </li>

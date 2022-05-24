@@ -33,8 +33,8 @@
                     <tr>
                         <th>Nama</th>
                         <th>Email</th>
-                        <th>Paket</th>
-                        <th>Tanggal</th>
+                        <th>Role</th>
+                        <th>Tanggal Dibuat</th>
                         <th>Status</th>
                         <th></th>
                     </tr>
@@ -47,8 +47,8 @@
                     <tr>
                         <td>{{ $d->name}}</td>
                         <td>{{ $d->email }}</td>
-                        <td>Paket</td>
-                        <td>Tanggal</td>
+                        <td>{{ $d->role }}</td>
+                        <td>{{ $d->created_at }}</td>
                         <td>Aktif</td>
                         <td>
                             <form action="{{ route('user.delete', $d->id) }}" method="POST">
