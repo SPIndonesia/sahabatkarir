@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\Auth;
+namespace App\Http\Controllers\Api\Kategori;
 
 use App\Http\Controllers\Controller;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
 
-class KategoriController extends Controller
+class GetKategoriController extends Controller
 {
     /**
      * Handle the incoming request.
@@ -16,17 +16,8 @@ class KategoriController extends Controller
      */
     public function __invoke(Request $request)
     {
-        Kategori::create([
-            'nama' => $request->nama
-        ]);
-
-        return response('kategori berhasil ditambahkan');
-    }
-
-    public function get()
-    {
         $data = Kategori::all();
 
-        return response()->json($data);
+        return response(['data' => ['status' => 200, 'kategori' => $data]]);
     }
 }

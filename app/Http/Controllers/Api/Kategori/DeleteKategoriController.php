@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\Kategori;
 
 use App\Http\Controllers\Controller;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
 
-class GetKategoriController extends Controller
+class DeleteKategoriController extends Controller
 {
     /**
      * Handle the incoming request.
@@ -14,10 +14,10 @@ class GetKategoriController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Request $request)
+    public function __invoke($id)
     {
-        $data = Kategori::all();
+        Kategori::find($id)->delete()->csrf();
 
-        return response(['data' => ['status' => 200, 'kategori' => $data]]);
+        return response('deleted succesfully');
     }
 }

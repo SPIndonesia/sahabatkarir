@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\Kategori;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
@@ -16,7 +16,7 @@ class GetUserController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $data = User::all();
+        $data = User::where('role', 'user')->get();
 
         return response(['data' => ['status' => 200, 'user' => $data]]);
     }
