@@ -16,9 +16,9 @@ class PembayaranController extends Controller
     {
         $data_pembayaran = Pembayaran::all();
         $data = [
-            'judul' => 'judul',
-            'css' => 'pembayaran',
-            'js' => 'pembayaran',
+            'judul' => 'Sahabat Karir | Pembayaran',
+            'css' => ['pembayaran'],
+            'js' => ['pembayaran'],
             'data_pembayaran' => $data_pembayaran,
         ];
 

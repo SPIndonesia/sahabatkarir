@@ -26,8 +26,12 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::put('admin/kategori/ubah/{id}', [KategoriController::class, 'ubah'])->name('kategori.ubah');
     Route::put('admin/paket/ubah/{id}', [PaketController::class, 'ubah'])->name('paket.ubah');
     Route::delete('admin/kategori/hapus/{id}', [KategoriController::class, 'hapus'])->name('kategori.hapus');
+
+    Route::get('/admin/pembayaran', [PembayaranController::class, 'index']);
+
     Route::delete('admin/paket/hapus/{id}', [PaketController::class, 'hapus'])->name('paket.hapus');
     Route::get('/admin/pembayaran', [UserController::class, 'index']);
+
 });
 
 Route::middleware(['auth', 'user'])->group(function () {
