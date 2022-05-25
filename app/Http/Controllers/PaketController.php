@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Paket;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 
 class PaketController extends Controller
@@ -14,7 +15,17 @@ class PaketController extends Controller
      */
     public function index()
     {
-        $data = Paket::all();
+        $data_paket = Paket::all();
+        $data_kategori = Kategori::all();
+        $data = [
+            'judul' => 'Sahabat Karir | Paket',
+            'css' => ['paket'],
+            'js' => ['paket'],
+            'data_paket' => $data_paket,
+            'data_kategori' => $data_kategori,
+        ];
+
+        return view('paket', $data);
     }
 
     /**
@@ -35,13 +46,14 @@ class PaketController extends Controller
      */
     public function store(Request $request)
     {
-        $data = Paket::created([
+        $data = Paket::create([
             'nama' => $request->nama,
             'harga' => $request->harga,
             'deskripsi' => $request->deskripsi,
+            'id_kategori' => $request->id_kategori,
         ]);
 
-        return redirect('');
+        return redirect('admin/paket');
     }
 
     /**
@@ -82,6 +94,16 @@ class PaketController extends Controller
             'id_kategori' => $request->id_kategori,
         ]);
     }
+    public function ubah(Request $request, Paket $paket, $id)
+    {
+        $data = Paket::find($id)->update([
+            'nama' => $request->nama,
+            'harga' => $request->harga,
+            'deskripsi' => $request->deskripsi,
+            'id_kategori' => $request->id_kategori,
+        ]);
+        return redirect('admin/paket');
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -92,5 +114,10 @@ class PaketController extends Controller
     public function destroy(Paket $paket)
     {
         //
+    }
+    public function hapus($id)
+    {
+        $data = Paket::find($id)->delete();
+        return redirect('admin/paket');
     }
 }
