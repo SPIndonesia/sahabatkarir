@@ -56,7 +56,7 @@
                     <h2>Kategori</h2>
                 </li>
 
-                <li class="nav" data-target="pembayaran">
+                <li class="nav" data-target="admin/pembayaran">
                     <i class="fa-solid fa-money-check-dollar"></i>
                     <h2>Pembayaran</h2>
                 </li>

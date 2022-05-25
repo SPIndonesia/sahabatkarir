@@ -22,7 +22,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::post('admin/kategori/store', [KategoriController::class, 'store'])->name('kategori.store');
     Route::put('admin/kategori/ubah/{id}', [KategoriController::class, 'ubah'])->name('kategori.ubah');
     Route::delete('admin/kategori/hapus/{id}', [KategoriController::class, 'hapus'])->name('kategori.hapus');
-    Route::get('/admin/pembayaran', [UserController::class, 'index']);
+    Route::get('/admin/pembayaran', [PembayaranController::class, 'index']);
 });
 
 Route::middleware(['auth', 'user'])->group(function () {

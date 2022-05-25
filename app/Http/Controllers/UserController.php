@@ -16,7 +16,7 @@ class UserController extends Controller
     {
         $data_user = User::all();
         $data = [
-            'judul' => 'Sahabat Karir | Kategori',
+            'judul' => 'Sahabat Karir | User',
             'css' => ['dataPeserta'],
             'js' => ['dataPeserta'],
             'data_user' => $data_user,
