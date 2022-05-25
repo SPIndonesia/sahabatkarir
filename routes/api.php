@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\Api\Auth\RegisterController;
+use App\Http\Controllers\Api\Auth\KategoriController;
+use App\Http\Controllers\Api\GetKategoriController;
+use App\Http\Controllers\Api\GetUserController;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +22,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+route::post('register', RegisterController::class);
+route::post('kategori', KategoriController::class);
+route::get('kategori/semua', GetKategoriController::class);
+route::get('user/semua', GetUserController::class);

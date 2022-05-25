@@ -35,12 +35,9 @@
 
                 <tbody>
                     @foreach ($data_kategori as $d)
-                    @php
-                    $i=1
-                    @endphp
                     <tr>
                         <td>
-                            <?= $i  ?>
+                            {{ $loop->iteration }}
                         </td>
 
                         <td>{{ $d->nama }}</td>
@@ -64,9 +61,6 @@
                             </div>
                         </td>
                     </tr>
-                    @php
-                    $i++
-                    @endphp
                     @endforeach
 
                 </tbody>
@@ -123,5 +117,4 @@
         </div>
     </div>
 </section>
-
 @endsection
