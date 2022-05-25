@@ -23,10 +23,10 @@
             <img src="assets/img/icon/logo-sk.png" alt="sahabat karir">
         </div>
 
-        <nav class="navigasi-halaman-landing">
-            <a href="#">Kelas</a>
-            <a href="#">Tentang Kami</a>
-            <a href="#">Pelanggan</a>
+        <nav class="navigasi-halaman-landing" id="nav">
+            <a href="kelas">Kelas</a>
+            <a href="tentang-kami">Tentang Kami</a>
+            <a href="pelanggan">Pelanggan</a>
         </nav>
 
         <form class="pencarian" action="" method="POST">
@@ -68,13 +68,15 @@
 
                 <ul>
                     <li>
-                        <a href="#">Kelas</a>
+                        <a href="">Kelas</a>
                     </li>
+
                     <li>
-                        <a href="#">Tentang Kami</a>
+                        <a href="">Tentang Kami</a>
                     </li>
+
                     <li>
-                        <a href="#">Pelanggan</a>
+                        <a href="">Pelanggan</a>
                     </li>
                 </ul>
             </div>
@@ -88,10 +90,10 @@
                             sahabatkarirrofficial</a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/sahabt_ikadin/" target="_blank">@ sahabt_ikadin</a>
+                        <a href="https://www.instagram.com/sahabt_ikadin/" target="_blank">@ sahabat_ikadin</a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/shabatpolri/" target="_blank">@ shabatpolri</a>
+                        <a href="https://www.instagram.com/shabatpolri/" target="_blank">@ sahabatpolri</a>
                     </li>
                 </ul>
             </div>
@@ -132,7 +134,6 @@
 
     <!-- --------------- js --------------- -->
     <script src="https://kit.fontawesome.com/02db274a60.js" crossorigin="anonymous"></script>
-    <script src="assets/js/template.js"></script>
     <script src="assets/js/landingPage.js"></script>
 </body>
 
