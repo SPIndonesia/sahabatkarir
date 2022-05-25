@@ -1,3 +1,19 @@
+// TODO: Navigasi
+const navHalLanding = [...document.querySelectorAll('#nav a')]
+
+navHalLanding.map(e => {
+    e.addEventListener('click', e => {
+        e.preventDefault()
+
+        const hrefTarget = e.target.getAttribute('href')
+
+        let target = document.getElementById(hrefTarget).offsetTop
+        target -= 100
+
+        window.scrollTo(0, target)
+    })
+})
+
 /* ----------------------------------------------------------------------------------------------
  * Konten
  * ----------------------------------------------------------------------------------------------
@@ -13,19 +29,19 @@ const slickDefault = function (kelas) {
         dots: true,
         arrows: false,
         responsive: [{
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
             }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
         ]
     })
 }
