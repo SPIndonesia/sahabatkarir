@@ -66,7 +66,7 @@
 
                     <li class="daftar-sekarang">
                         <span>Sudah punya akun?</span>
-                        <a href="">Login Sekarang</a>
+                        <a href="{{ route('login') }}">Login Sekarang</a>
                     </li>
                 </ul>
             </form>
