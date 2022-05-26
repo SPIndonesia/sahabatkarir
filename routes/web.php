@@ -5,7 +5,6 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PembayaranController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Sahabatkarir;
-// use App\Http\Controllers\user\PaketController;
 use App\Http\Controllers\PaketController;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,7 +30,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::delete('admin/paket/hapus/{id}', [PaketController::class, 'hapus'])->name('paket.hapus');
     Route::get('/admin/pembayaran', [UserController::class, 'index']);
-
 });
 
 Route::middleware(['auth', 'user'])->group(function () {

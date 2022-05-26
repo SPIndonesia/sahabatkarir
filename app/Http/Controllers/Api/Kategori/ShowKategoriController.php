@@ -19,6 +19,6 @@ class ShowKategoriController extends Controller
         $data = Kategori::find($id);
 
 
-        return response(['data' => ['status' => 200, 'kategori' => $data]]);
+        return response()->json(['data' => ['status' => 200, 'kategori' => $data]]);
     }
 }

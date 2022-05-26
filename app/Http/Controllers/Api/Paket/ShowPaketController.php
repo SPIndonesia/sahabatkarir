@@ -18,6 +18,6 @@ class ShowPaketController extends Controller
     {
         $data = Paket::find($id);
 
-        return response(['data' => ['status' => 200, 'paket' => $data]]);
+        return response()->json(['data' => ['status' => 200, 'paket' => $data]]);
     }
 }

@@ -18,6 +18,6 @@ class GetPaketController extends Controller
     {
         $data = Paket::all();
 
-        return response(['data' => ['status' => 200, 'paket' => $data]]);
+        return response()->json(['data' => ['status' => 200, 'paket' => $data]]);
     }
 }

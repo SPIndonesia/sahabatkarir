@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api\Kategori;
+namespace App\Http\Controllers\Api\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use Illuminate\Http\Request;
 
-class GetUserController extends Controller
+class LoginController extends Controller
 {
     /**
      * Handle the incoming request.
@@ -16,8 +15,5 @@ class GetUserController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $data = User::where('role', 'user')->get();
-
-        return response()->json(['data' => ['status' => 200, 'user' => $data]]);
     }
 }

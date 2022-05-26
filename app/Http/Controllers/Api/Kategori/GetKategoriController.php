@@ -18,6 +18,6 @@ class GetKategoriController extends Controller
     {
         $data = Kategori::all();
 
-        return response(['data' => ['status' => 200, 'kategori' => $data]]);
+        return response()->json(['data' => ['status' => 200, 'kategori' => $data]]);
     }
 }

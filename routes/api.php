@@ -35,19 +35,19 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware(['auth', 'user'])->group(function () {
 });
 
-Route::middleware(['auth', 'admin'])->group(function () {
-    route::post('kategori/tambah', CreateKategoriController::class);
-    route::get('kategori', GetKategoriController::class);
-    route::get('kategori/{id}', ShowKategoriController::class);
-    route::delete('kategori/hapus/{id}', DeleteKategoriController::class);
-    route::put('kategori/ubah/{id}', UpdateKategoriController::class);
+// Route::middleware(['auth', 'admin'])->group(function () {
+// });
+route::get('kategori', GetKategoriController::class);
+route::post('kategori/tambah', CreateKategoriController::class);
+route::get('kategori/{id}', ShowKategoriController::class);
+route::delete('kategori/hapus/{id}', DeleteKategoriController::class);
+route::put('kategori/ubah/{id}', UpdateKategoriController::class);
 
 
-    route::post('paket/tambah', CreatePaketController::class);
-    route::get('paket', GetPaketController::class);
-    route::get('paket/{id}', ShowPaketController::class);
-    route::delete('paket/hapus/{id}', DeletePaketController::class);
-    route::put('paket/ubah/{id}', UpdatePaketController::class);
-});
+route::post('paket/tambah', CreatePaketController::class);
+route::get('paket', GetPaketController::class);
+route::get('paket/{id}', ShowPaketController::class);
+route::delete('paket/hapus/{id}', DeletePaketController::class);
+route::put('paket/ubah/{id}', UpdatePaketController::class);
 
 route::post('register', RegisterController::class);
