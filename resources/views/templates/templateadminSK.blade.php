@@ -55,8 +55,8 @@
                     <i class="fa-solid fa-layer-group"></i>
                     <h2>Kategori</h2>
                 </li>
-
-                <li class="nav" data-target="admin/pembayaran">
+                {{--
+                <li class="nav" data-target="admin/pembayaran"> --}}
 
                 <li class="nav" data-target="admin/paket">
                     <i class="fa-solid fa-layer-group"></i>
