@@ -15,6 +15,9 @@ class CreateTbPembayaranTable extends Migration
     {
         Schema::create('tb_pembayaran', function (Blueprint $table) {
             $table->id();
+            $table->string('id_paket');
+            $table->string('id_peserta');
+            $table->string('status');
             $table->timestamps();
         });
     }
