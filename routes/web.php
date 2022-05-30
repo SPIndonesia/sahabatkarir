@@ -6,6 +6,7 @@ use App\Http\Controllers\PembayaranController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Sahabatkarir;
 use App\Http\Controllers\PaketController;
+use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Auth;
 
 // Route::get('/kategori', [KategoriController::class, 'index']);
@@ -41,8 +42,11 @@ Route::middleware(['auth', 'user'])->group(function () {
 Route::get('/beranda', function () {
     return view('index');
 });
-Route::get('/pembayaran', [PembayaranController::class, 'index']);
+// Route::get('/pembayaran', [PembayaranController::class, 'index']);
 Auth::routes();
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/pembayaran', [WebController::class, 'index']);
+Route::post('/pembayaran', [WebController::class, 'pembayaran']);

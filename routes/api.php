@@ -12,6 +12,7 @@ use App\Http\Controllers\Api\Paket\DeletePaketController;
 use App\Http\Controllers\Api\Paket\GetPaketController;
 use App\Http\Controllers\Api\Paket\ShowPaketController;
 use App\Http\Controllers\Api\Paket\UpdatePaketController;
+use App\Http\Controllers\Api\PembayaranController;
 use App\Models\Kategori;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
@@ -51,3 +52,4 @@ route::delete('paket/hapus/{id}', DeletePaketController::class);
 route::put('paket/ubah/{id}', UpdatePaketController::class);
 
 route::post('register', RegisterController::class);
+route::post('/pembayaran-handler', PembayaranController::class);
