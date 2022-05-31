@@ -38,7 +38,7 @@ Route::middleware(['auth', 'user'])->group(function () {
 
 // Route::middleware(['auth', 'admin'])->group(function () {
 // });
-route::get('kategori', GetKategoriController::class);
+route::get('kategori',   GetKategoriController::class);
 route::post('kategori/tambah', CreateKategoriController::class);
 route::get('kategori/{id}', ShowKategoriController::class);
 route::delete('kategori/hapus/{id}', DeleteKategoriController::class);
